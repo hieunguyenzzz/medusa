@@ -1,16 +1,16 @@
-# Class: CustomShippingOptionService
+# Class: AnalyticsConfigService
 
 ## Hierarchy
 
 - `TransactionBaseService`
 
-  ↳ **`CustomShippingOptionService`**
+  ↳ **`AnalyticsConfigService`**
 
 ## Constructors
 
 ### constructor
 
-• **new CustomShippingOptionService**(`__namedParameters`)
+• **new AnalyticsConfigService**(`__namedParameters`)
 
 #### Parameters
 
@@ -24,7 +24,7 @@ TransactionBaseService.constructor
 
 #### Defined in
 
-[packages/medusa/src/services/custom-shipping-option.ts:20](https://github.com/hieunguyenzzz/medusa/blob/0b0d50b4/packages/medusa/src/services/custom-shipping-option.ts#L20)
+[packages/medusa/src/services/analytics-config.ts:24](https://github.com/hieunguyenzzz/medusa/blob/0b0d50b4/packages/medusa/src/services/analytics-config.ts#L24)
 
 ## Properties
 
@@ -56,13 +56,13 @@ TransactionBaseService.\_\_container\_\_
 
 ___
 
-### customShippingOptionRepository\_
+### analyticsConfigRepository\_
 
-• `Protected` **customShippingOptionRepository\_**: typeof `CustomShippingOptionRepository`
+• `Protected` `Readonly` **analyticsConfigRepository\_**: typeof `AnalyticsConfigRepository`
 
 #### Defined in
 
-[packages/medusa/src/services/custom-shipping-option.ts:18](https://github.com/hieunguyenzzz/medusa/blob/0b0d50b4/packages/medusa/src/services/custom-shipping-option.ts#L18)
+[packages/medusa/src/services/analytics-config.ts:21](https://github.com/hieunguyenzzz/medusa/blob/0b0d50b4/packages/medusa/src/services/analytics-config.ts#L21)
 
 ___
 
@@ -76,7 +76,7 @@ TransactionBaseService.manager\_
 
 #### Defined in
 
-[packages/medusa/src/services/custom-shipping-option.ts:15](https://github.com/hieunguyenzzz/medusa/blob/0b0d50b4/packages/medusa/src/services/custom-shipping-option.ts#L15)
+[packages/medusa/src/services/analytics-config.ts:18](https://github.com/hieunguyenzzz/medusa/blob/0b0d50b4/packages/medusa/src/services/analytics-config.ts#L18)
 
 ___
 
@@ -90,7 +90,17 @@ TransactionBaseService.transactionManager\_
 
 #### Defined in
 
-[packages/medusa/src/services/custom-shipping-option.ts:16](https://github.com/hieunguyenzzz/medusa/blob/0b0d50b4/packages/medusa/src/services/custom-shipping-option.ts#L16)
+[packages/medusa/src/services/analytics-config.ts:19](https://github.com/hieunguyenzzz/medusa/blob/0b0d50b4/packages/medusa/src/services/analytics-config.ts#L19)
+
+___
+
+### userService\_
+
+• `Protected` `Readonly` **userService\_**: [`UserService`](UserService.md)
+
+#### Defined in
+
+[packages/medusa/src/services/analytics-config.ts:22](https://github.com/hieunguyenzzz/medusa/blob/0b0d50b4/packages/medusa/src/services/analytics-config.ts#L22)
 
 ## Methods
 
@@ -135,75 +145,66 @@ ___
 
 ### create
 
-▸ **create**(`data`): `Promise`<`CustomShippingOption`\>
+▸ **create**(`userId`, `data`): `Promise`<`AnalyticsConfig`\>
 
-Creates a custom shipping option
+Creates an analytics config.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `data` | `CreateCustomShippingOptionInput` | the custom shipping option to create |
+| Name | Type |
+| :------ | :------ |
+| `userId` | `string` |
+| `data` | `CreateAnalyticsConfig` |
 
 #### Returns
 
-`Promise`<`CustomShippingOption`\>
-
-resolves to the creation result
+`Promise`<`AnalyticsConfig`\>
 
 #### Defined in
 
-[packages/medusa/src/services/custom-shipping-option.ts:89](https://github.com/hieunguyenzzz/medusa/blob/0b0d50b4/packages/medusa/src/services/custom-shipping-option.ts#L89)
+[packages/medusa/src/services/analytics-config.ts:56](https://github.com/hieunguyenzzz/medusa/blob/0b0d50b4/packages/medusa/src/services/analytics-config.ts#L56)
 
 ___
 
-### list
+### delete
 
-▸ **list**(`selector`, `config?`): `Promise`<`CustomShippingOption`[]\>
+▸ **delete**(`userId`): `Promise`<`void`\>
 
-Fetches all custom shipping options based on the given selector
+Deletes an analytics config.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `selector` | `Selector`<`CustomShippingOption`\> | the query object for find |
-| `config` | `FindConfig`<`CustomShippingOption`\> | the configuration used to find the objects. contains relations, skip, and take. |
+| Name | Type |
+| :------ | :------ |
+| `userId` | `string` |
 
 #### Returns
 
-`Promise`<`CustomShippingOption`[]\>
-
-custom shipping options matching the query
+`Promise`<`void`\>
 
 #### Defined in
 
-[packages/medusa/src/services/custom-shipping-option.ts:65](https://github.com/hieunguyenzzz/medusa/blob/0b0d50b4/packages/medusa/src/services/custom-shipping-option.ts#L65)
+[packages/medusa/src/services/analytics-config.ts:103](https://github.com/hieunguyenzzz/medusa/blob/0b0d50b4/packages/medusa/src/services/analytics-config.ts#L103)
 
 ___
 
 ### retrieve
 
-▸ **retrieve**(`id`, `config?`): `Promise`<`CustomShippingOption`\>
-
-Retrieves a specific shipping option.
+▸ **retrieve**(`userId`): `Promise`<`AnalyticsConfig`\>
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `id` | `string` | the id of the custom shipping option to retrieve. |
-| `config` | `FindConfig`<`CustomShippingOption`\> | any options needed to query for the result. |
+| Name | Type |
+| :------ | :------ |
+| `userId` | `string` |
 
 #### Returns
 
-`Promise`<`CustomShippingOption`\>
-
-the requested custom shipping option.
+`Promise`<`AnalyticsConfig`\>
 
 #### Defined in
 
-[packages/medusa/src/services/custom-shipping-option.ts:37](https://github.com/hieunguyenzzz/medusa/blob/0b0d50b4/packages/medusa/src/services/custom-shipping-option.ts#L37)
+[packages/medusa/src/services/analytics-config.ts:32](https://github.com/hieunguyenzzz/medusa/blob/0b0d50b4/packages/medusa/src/services/analytics-config.ts#L32)
 
 ___
 
@@ -231,9 +232,32 @@ TransactionBaseService.shouldRetryTransaction\_
 
 ___
 
+### update
+
+▸ **update**(`userId`, `update`): `Promise`<`AnalyticsConfig`\>
+
+Updates an analytics config. If the config does not exist, it will be created instead.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `userId` | `string` |
+| `update` | `UpdateAnalyticsConfig` |
+
+#### Returns
+
+`Promise`<`AnalyticsConfig`\>
+
+#### Defined in
+
+[packages/medusa/src/services/analytics-config.ts:72](https://github.com/hieunguyenzzz/medusa/blob/0b0d50b4/packages/medusa/src/services/analytics-config.ts#L72)
+
+___
+
 ### withTransaction
 
-▸ **withTransaction**(`transactionManager?`): [`CustomShippingOptionService`](CustomShippingOptionService.md)
+▸ **withTransaction**(`transactionManager?`): [`AnalyticsConfigService`](AnalyticsConfigService.md)
 
 #### Parameters
 
@@ -243,7 +267,7 @@ ___
 
 #### Returns
 
-[`CustomShippingOptionService`](CustomShippingOptionService.md)
+[`AnalyticsConfigService`](AnalyticsConfigService.md)
 
 #### Inherited from
 
